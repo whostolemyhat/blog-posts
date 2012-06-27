@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sublime Text</title>
+</head>
+<body>
+<h1>Sublime Text</h1>
+
+<h2>Really Useful Plugins</h2>
+
+<h3>Package Control</h3>
+
+<p><em><a href="http://wbond.net/sublime_packages/package_control">Package Control</a> is a package manager for Sublime Text 2. It makes finding and installing plugins incredibly easy.</em></p>
+
+<p>The best plugin for Sublime Text 2 is the <a href="http://wbond.net/sublime_packages/package_control">Package Control</a> plugin, which is absolutely essential. Package Control lists available plugins and also takes care of installing them, meaning plugin installation is as simple as typing part of a package name (to see what&rsquo;s available) and choosing from a list. [example]</p>
+
+<p>For example, if you wanted SASS syntax highlighting, you simply open the Command Pallete (Ctrl+Shift+P) and type &lsquo;Install&rsquo; to find the installation command. This will then show you a list of available plugins; type &lsquo;SASS&rsquo; to find SASS-related plugins, then choose an appropriate plugin and press &lsquo;Enter&rsquo; to install. Plugins are even installed without having to restart Sublime Text!</p>
+
+<p>Package Control can be installed by running the following command in the Sublime Text 2 console (opened with Ctrl+` (backtick) or View > Console):</p>
+
+<p><code>import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'</code></p>
+
+<p>The rest of the plugins mentioned here can all be installed through Package Control by pressing Ctrl+Shift+P to open the Command Pallete, then typing &lsquo;Install&rsquo; to find the installation command as above.</p>
+
+<h3>Zen Coding</h3>
+
+<p><em>Zen Coding allows auto-completion of snippets by pressing tab.</em></p>
+
+<p>The Zen Coding plugin is installed by default in Sublime. This plugin makes creating HTML vastly quicker and easier - instead of typing out each tag and nesting them, you type a snippet version and press &lsquo;Tab&rsquo; to expand it into HTML. For example, to create a list with an id of &lsquo;nav&rsquo; containing three links, the Zen snippet would be: <pre>ul#nav>li*3>a</pre>
+This expands to:</p>
+
+<pre><code>&lt;ul id="nav"&gt;
+    &lt;li&gt;&lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>[link]Zen Coding syntax</p>
+
+<h3>Tag</h3>
+
+<p><em>Tag provides a number of useful functions for working with markup, such as auto-closing tags and tidying up formatting.</em></p>
+
+<p>Tag is one of my favourite plugins when I&rsquo;m working with HTML - not only does it highlight tags which are missing closing tags, but it also inserts the correct closing tag when you type <code>&lt;/</code> (the start of a closing tag).</p>
+
+<p>Another incredibly useful feature of Tag is it&rsquo;s format command - open the Command Pallete and type &lsquo;Format&rsquo; to find the command (the document needs to be HTML syntax) and Tag will tidy up the formatting for you. While it doesn&rsquo;t always lay out tags in the way I would, it&rsquo;s still infintely faster than trying to clean up formatting by hand.</p>
+
+<h2>Other Plugins</h2>
+
+<p><em>Other plugins which I&rsquo;ve found useful</em></p>
+
+<h3>BracketHighlighter</h3>
+
+<p><em>Matches pairs of brackets</em></p>
+
+<h3>WordHighlighter</h3>
+
+<p><em>Matches all occurences of a word in a document and highlights them.</em></p>
+
+<h3>ColorHighlighter</h3>
+
+<p><em>Highlight a hex code in a document and the background highlight colour is changed to the colour.</em></p>
+
+<h3>More</h3>
+
+<p><a href="http://www.nerdi.net/blog/2012/02/05/customize-your-sublime-text-2-configuration-for-awesome-coding/">Useful post about configuring Sublime Text 2 and using snippets</a></p>
+
+<p><a href="http://net.tutsplus.com/tutorials/tools-and-tips/essential-sublime-text-2-plugins-and-extensions/">List of useful plugins</a></p>
+</body>
+</html>
