@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>1GAM Feburary - Copycat</title>
+
+</head>
+<body>
+<h1>1GAM Feburary - Copycat</h1>
+
+<p><strong>Name:</strong> <a href="http://www.jamestease.co.uk/games/copycat/">Copycat</a>
+<strong>Genre:</strong> Memory game
+<strong>Engine:</strong> HTML5 / Javascript
+<strong>Source:</strong> <a href="https://github.com/whostolemyhat/feb-1gam">Github</a></p>
+
+<p><em>In which I learn the value of planning</em></p>
+
+<p>For <a href="http://www.jamestease.co.uk/games/copycat/">February's game</a>, I decided to learn from my mistakes by writing the game from scratch and leaving everything to the last minute. This was, as I discovered last month, not the best idea.</p>
+
+<p>The theme for February was 'Sound', so I decided to make a memory game similar to  'Bop it'. This seemed fairly straightforward to make in HTML - just create a load of links, play a sound then get the user to click on the relevant link.</p>
+
+<p>However, due to my inept planning, I didn't end up using sound at all, and the game morphed into a visual memory game like 'Simon' - users had to repeat a sequence which was shown to them at the start of each round.</p>
+
+<p>From a technical point of view this is fairly simple - have some coloured blocks, populate an array at random, then read through the array and highlight the relevant block to create the sequence.  The interesting part is highlighting the blocks and getting the timing of the playback correct (so blocks don't all highlight at once, overlap each other or break the page they're sitting in).</p>
+
+<p>The animation timing was an area which tripped me up - I used <a href="https://developer.mozilla.org/en/docs/DOM/window.setTimeout">Javascript's setTimeout function</a>, and, as every time I use it, I forgot that there shouldn't be brackets after the function you pass in:</p>
+
+<pre><code>setTimeout(animateBlocks(), 1000); // WRONG!
+
+setTimeout(animateBlocks, 1000); // CORRECT!
+</code></pre>
+
+<p>The first line (wrong!) will execute the code in the <code>animateBlocks</code> function immediately rather than waiting for one second, since having the brackets after the function name <strong>calls the function</strong>. (I forget this every single time I use setTimeout, and end up spending a frustrating hour trying to work out why everything's happening at once. Perhaps it'll sink in this time.) Passing just the name of the function to setTimeout makes everything run as expected.</p>
+
+<p>However, later on in my code, I needed to pass variables to a function called by setTimeout. "No problem", I thought, "I'll just add the brackets back in with the variables":</p>
+
+<pre><code>setTimout(animateBlock(block), 1000);
+</code></pre>
+
+<p>Yep, this executes the function immediately. To call functions with variables in setTimeout, you need to wrap the function with an anonymous function (or rather, contain it within a closure so it isn't called immediately):</p>
+
+<pre><code>setTimeout(function() { animateBlock(block); }, 1000);
+</code></pre>
+
+<p>If nothing else, I'm pleased that making Copycat has taught me how to use setTimeout properly :)</p>
+
+<p>The game itself was pretty rushed, which I think shows - the score is pretty much an afterthought, and there's no progression in the game - i.e. the length of the sequence stays the same, and there aren't any different mechanics in the game. This really hammered home the importance of planning in making a game - for the March entry, I've given myself weekly targets to make sure I don't end up trying to cram everything into the last week again!</p>
+
+<p><a href="https://github.com/whostolemyhat/feb-1gam">Source on Github</a>
+<a href="http://www.jamestease.co.uk/games/copycat/">Play the game!</a></p>
+
+<h2>Tools</h2>
+
+<ul>
+<li><a href="http://yeoman.io/">Yeoman</a> - used to quickly set up project, server and live reload</li>
+<li><a href="http://jquery.com/">jQuery</a> - because browsers</li>
+<li><a href="http://compass-style.org/">Compass/Sass</a> - just can't go back to plain CSS!</li>
+<li><a href="http://www.sublimetext.com/2">Sublime Text 2</a> - love it</li>
+</ul>
+
+</body>
+</html>

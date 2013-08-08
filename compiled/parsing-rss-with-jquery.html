@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Parsing RSS feeds with jQuery</title>
+</head>
+<body>
+<h1>Parsing RSS feeds with jQuery</h1>
+
+<p>I recently came across this <a href="http://stackoverflow.com/a/6271906/345078">jQuery snippet on Stack Overflow</a> which can be used to convert RSS feeds (which are almost always in XML format) into JSON, which can be used directly in Javascript.</p>
+
+<pre><code>function parseRSS(url, callback) {
+    $.ajax({
+        url: document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&amp;num=10&amp;callback=?&amp;q=' + encodeURIComponent(url),
+        dataType: 'json',
+        success: function(data) {
+        callback(data.responseData.feed);
+        }
+    });
+}
+</code></pre>
+
+<p>This function calls the RSS feed through Google&rsquo;s cache, which then returns the feed as JSON (which is much easier to use with Javascript, since it&rsquo;s just a Javascript object).</p>
+
+<p>Since it&rsquo;s called through Google, it won&rsquo;t update immediately (Google needs to crawl the feed for new stories to appear).</p>
+</body>
+</html>

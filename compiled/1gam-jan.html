@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>1GAM January - Pew Pew</title>
+
+</head>
+<body>
+<h1>1GAM January - Pew Pew</h1>
+
+<p><strong>Name:</strong> Pew Pew</p>
+
+<p><strong>Genre:</strong> Shoot-em-up</p>
+
+<p><strong>Engine:</strong> HTML5 Canvas</p>
+
+<p><a href="https://github.com/whostolemyhat/fruit-shoot">Source on Github</a></p>
+
+<p>I only decided to take part in 1GAM in the middle of January, so had only about a week or so to make my first entry (getting my excuses in early!). I've built a couple of simple games (Pong, Noughts and Crosses) using HTML5 canvas, so this seemed like a good place to start - learning a new game engine or framework well enough would have taken me past the end of the month.</p>
+
+<p>I decided on a shoot-em-up game mainly because I haven't made one before, and it involves a fair number of things used in a lot of games:</p>
+
+<ul>
+<li>simple AI (enemies)</li>
+<li>player input (for controls)</li>
+<li>collision detection</li>
+<li>powerups!</li>
+<li>sprites/art (my previous games only used basic shapes rather than any artwork)</li>
+</ul>
+
+
+<h2>What went right</h2>
+
+<p>The main thing I got right: I finished in time! In fact, I finished a day early, and spent it tarting up the webpage for the game. I also amanaged to add most aspects I planned for (despite massive cuts to get it finished in time) - enemies, powerups and a final boss were the key elements I wanted to add.</p>
+
+<h2>What went wrong</h2>
+
+<p>I decided to write the game from scratch, which turned out to be a huge mistake. I felt that using a framework or game engine would somehow be cheating (which seems to be <a href="http://scientificninja.com/blog/write-games-not-engines">quite a common feeling</a>), but it meant that I had a huge amount of work to do in a very short space of time, even though my game was very small. The only reason I was able to finish was by using (read: nicking) code from <a href="http://www.html5rocks.com/en/tutorials/canvas/notearsgame/">tutorials</a> to handle sprites and sounds. <strong>Lesson learned: always use a game engine!</strong> (unless you have a really really good reason)</p>
+
+<p>This was my first entry into a time-limited contest, so my initial game turned out to be vastly too ambitious to finish. Originally I had planned on several enemies, different powerups, mutiple waves of enemies and an end boss. The finished game has a shield powerup, one wave of one type of enemy and a boss - basically everything trimmed back as far as possible. I think I lost quite a chunk of time towards the start of the project by trying to make everything in the code reusable - i.e. an Enemy object which could be extended for use in multiple enemy types (and the same for bosses and powerups). I soon realised that this was slowing me down, so largely abandoned this approach: in the source code you can see a Powerup object along with a setting which would show which powerup was active; in the end I just used a variable set to either on or off to activate a shield.</p>
+
+<p>The code is also a bit of mess - there's UI code which is quite tightly coupled to the game logic - things like the 'Play' button and the message system (which flashes up 'Win!' or 'Lose') should probably be in another file, or at least abstracted in some way. As I mentioned above, there's also a lot of code which I'm not really using, as a result of trying to make everything reusable.</p>
+
+<h2>Tools/resources</h2>
+
+<ul>
+<li><a href="http://www.html5rocks.com/en/tutorials/canvas/notearsgame/">HTML5 Rocks tutorial</a> - never would have finished without this!</li>
+<li><a href="http://www.gimpusers.com/tutorials/starfield-tutorial">Starfield tutorial</a></li>
+<li><a href="http://piq.codeus.net/draw">Piq</a> - used to draw pixel art</li>
+<li><a href="http://www.gimp.org/">GIMP</a> - Photoshop alternative</li>
+<li><a href="http://www.sxc.hu/">sxc.hu</a> - royalty-free images</li>
+<li><a href="http://thirdcog.eu/apps/cfxr">cfxr</a> - sound effects</li>
+<li><a href="http://yeoman.io/">Yeoman</a> - web development framework</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+##About
+The [Random Team Generator](http://www.jamestease.co.uk/team-generator/) creates teams for you from a list of names you provide. Either type or copy-and-paste a list of names into the app, pick the number of teams you want and choose the category of team names, and the app makes teams randomly picked from the list of names. Pick team names from animals, colours, planets or just use numbers, then copy the list of teams the app generates for you.
+
+##Post-Mortem
+I came across a team-making tool recently, and thought that it looked a good way to learn a new framework, so I made my own version.
+
+I decided to use [Flask](http://flask.pocoo.org/) for the Random Team Generator app since I love using Python (and am always looking for more opportunities to use it!) and I had already [briefly used Flask](https://github.com/whostolemyhat/bookmarks), although hadn't completed any projects with it. Flask turned out to be a good choice since there were plenty of instructions on how to deploy to WebFaction, my current webhost, and it's a very small, lightweight framework. This suited the app since I only needed a couple of pages and a bit of processing to make the functionality work - a larger framework like Django would be complete overkill for something this simple.
+
+The app itself is very simple - there's a [main page](http://www.jamestease.co.uk/team-generator/) which has the form for all the input (list of names, choice for team names and so on), and a page which generates the list of random teams then ouputs them as JSON. The main page then loads the JSON through AJAX and displays them underneath the form. I ended up with three templates in the app - a base which has all the boilerplate HTML (head/CSS/JS etc), a form template which contains just the form data, and a third template displaying the generated JSON, which is only used for debugging. In the live app, the JSON is printed out directly without using a template.
+
+###What I Learnt
+I really liked using Flask for this project - the Jinja template system (also used in Django) is great, and makes me wish I used it for everything! Flask itself was also fairly straightforward to get to grips with - the [docs on the site](http://flask.pocoo.org/docs/) are really useful (and include a couple of good tutorials), and the logic is similar enough to other Python frameworks (Django and the framework used in [Udacity's Web App course](http://www.udacity.com/overview/Course/cs253/CourseRev/apr2012) (web.py?)) that I was able to pick it up very quickly.
+
+The only thing I hadn't come across before was Flask's use of [Python decorators](http://stackoverflow.com/questions/739654/understanding-python-decorators) for routing - decorators are something I haven't come across before, so I'll have to spend a bit of time getting my head around them.
+
+###What I Could Do Differently
+At the moment, all of the logic is in one Python file (app.py) - while this is fine for a tiny app like this one (it only has two functions!), this could easily get unwieldy for larger projects. Splitting the file into different modules would probably be the best option, although I'm not sure how Flask deals with this - something to look into in my next project!

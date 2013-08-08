@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    margin: 10px 13px 10px 13px;
+}
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+@media screen and (min-width: 768px) {
+    body {
+        width: 748px;
+        margin:10px auto;
+    }
+}
+</style>
+<title>Responsive Design: Three case studies</title>
+
+</head>
+<body>
+<h1>Responsive Design: Three case studies</h1>
+
+<p>There's a lot more to responsive design than just changing the width of the page. These case studies document how three different sites were rebuilt to be responsive, and share ideas on</p>
+
+<h2><a href="http://responsivenews.co.uk/">Responsive News</a></h2>
+
+<p><a href="http://responsivenews.co.uk/">Responsive News</a> is a blog written by the BBC News developers and covers a wide range of topics they came across while rebuilding the BBC News site. The BBC is especially interesting since the site needs to work in eleventy billion different browsers, most of which are rather old.</p>
+
+<p>The key points this blog covers is '<a href="http://responsivenews.co.uk/post/18948466399/cutting-the-mustard">cutting the mustard</a>' - a technique used to work out whether the browser is modern enough to have all the fancy new features, or an older one which should be served a basic (but accessible) version of the site.</p>
+
+<p>The post on <a href="http://responsivenews.co.uk/post/50092458307/images">responsive images</a> (every image has eighteen different versions!) is also good, but you should read every post on the site!</p>
+
+<h2><a href="http://mattandrews.info/talks/port80-2013/">The Guardian mobile site</a></h2>
+
+<p>This is from <a href="http://mattandrews.info/talks/port80-2013/">a talk by Matt Andrews</a> (a front-end developer at the Guardian) at <a href="http://port80events.co.uk/">Port 80</a> earlier this year. Similar to the BBC site, only the mobile site was rebuilt to be responsive - it's a huge job to rebuild the entire site, so most sites choose to rebuild only a section at a time.</p>
+
+<p>This talk specifically mentions the BBC News approach, and covers which ideas were useful and which were expanded upon in rebuilding the Guardian. As with the BBC site, the Guardian checks <a href="http://mattandrews.info/talks/port80-2013/#/12">whether or not the browser can use certain features</a>, which then changes the version of the site shown to visitors.</p>
+
+<p><a href="http://mattandrews.info/talks/port80-2013/#/22">Images are dealt with in an interesting way</a> (responsive images are always interesting because no-one's really worked out a good way to handle them yet) - the Guardian site always downloads a very small (140px wide) image initially, then checks to see if the browser is on a larger screen and downloads a bigger version.</p>
+
+<p>The key thing from this talk was that <a href="http://mattandrews.info/talks/port80-2013/#/29">responsive design is about more than screen width</a> - the speed of the connection should also be taken into account when deciding what to show users. For instance, a phone being used over Wifi can probably handle large images and webfonts, whereas a laptop being used on a train is likely to have quite a bad connection and so should be served only the core site content.</p>
+
+<h2><a href="http://upstatement.com/blog/2012/01/how-to-approach-a-responsive-design/">Boston Globe</a></h2>
+
+<p>The Boston Globe case study is a comprehensive look at the responsive redesign of the Boston Globe site, from the initial design phase to building the site.</p>
+
+<p>The design process used is really interesting - the initial designs were for the desktop site, and were then iterated upon for the different versions of the site. Things like the top navigation are especially interesting - not all of the items could fit on the screen at smaller sizes, so the developers had to consider what the most important items were and which could be hidden without affecting the user experience.</p>
+
+<h2>Overall:</h2>
+
+<p>There are a few key things all of these case studies bring up:</p>
+
+<ul>
+<li><p><strong>Core experience</strong> - at smaller sizes not everything can fit on the screen. Similarly, slower connections shouldn't be made to download extra 'nice-to-have' features such as web fonts or large images - you should consider what the core features of your site are (i.e. the content!) and make sure this is loaded first so that users aren't negatively affected by the size of their device or speed of connection.</p></li>
+<li><p><strong>No big releases</strong> - rebuild parts of the site at a time - the Guardian even show their beta versions publically to get feedback. This means you don't need to rebuild the whole site at once; you can start from scratch on a smaller section without worrying whether you'll break the entire site or having to deal with technical debt.</p></li>
+<li><p><strong>Multiple experiences</strong> (progressive enhancement) - it's ok for the same site to look different on different browsers. You can't make a site look indentical on desktop and on mobile, so focus on creating the optimum experience for each one rather than having one all-round average version.</p></li>
+</ul>
+
+</body>
+</html>

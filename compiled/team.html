@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>About</title>
+
+</head>
+<body>
+<h2>About</h2>
+
+<p>The <a href="http://www.jamestease.co.uk/team-generator/">Random Team Generator</a> creates teams for you from a list of names you provide. Either type or copy-and-paste a list of names into the app, pick the number of teams you want and choose the category of team names, and the app makes teams randomly picked from the list of names. Pick team names from animals, colours, planets or just use numbers, then copy the list of teams the app generates for you.</p>
+
+<h2>Post-Mortem</h2>
+
+<p>I came across a team-making tool recently, and thought that it looked a good way to learn a new framework, so I made my own version.</p>
+
+<p>I decided to use <a href="http://flask.pocoo.org/">Flask</a> for the Random Team Generator app since I love using Python (and am always looking for more opportunities to use it!) and I had already <a href="https://github.com/whostolemyhat/bookmarks">briefly used Flask</a>, although hadn't completed any projects with it. Flask turned out to be a good choice since there were plenty of instructions on how to deploy to WebFaction, my current webhost, and it's a very small, lightweight framework. This suited the app since I only needed a couple of pages and a bit of processing to make the functionality work - a larger framework like Django would be complete overkill for something this simple.</p>
+
+<p>The app itself is very simple - there's a <a href="http://www.jamestease.co.uk/team-generator/">main page</a> which has the form for all the input (list of names, choice for team names and so on), and a page which generates the list of random teams then ouputs them as JSON. The main page then loads the JSON through AJAX and displays them underneath the form. I ended up with three templates in the app - a base which has all the boilerplate HTML (head/CSS/JS etc), a form template which contains just the form data, and a third template displaying the generated JSON, which is only used for debugging. In the live app, the JSON is printed out directly without using a template.</p>
+
+<h3>What I Learnt</h3>
+
+<p>I really liked using Flask for this project - the Jinja template system (also used in Django) is great, and makes me wish I used it for everything! Flask itself was also fairly straightforward to get to grips with - the <a href="http://flask.pocoo.org/docs/">docs on the site</a> are really useful (and include a couple of good tutorials), and the logic is similar enough to other Python frameworks (Django and the framework used in <a href="http://www.udacity.com/overview/Course/cs253/CourseRev/apr2012">Udacity's Web App course</a> (web.py?)) that I was able to pick it up very quickly.</p>
+
+<p>The only thing I hadn't come across before was Flask's use of <a href="http://stackoverflow.com/questions/739654/understanding-python-decorators">Python decorators</a> for routing - decorators are something I haven't come across before, so I'll have to spend a bit of time getting my head around them.</p>
+
+<h3>What I Could Do Differently</h3>
+
+<p>At the moment, all of the logic is in one Python file (app.py) - while this is fine for a tiny app like this one (it only has two functions!), this could easily get unwieldy for larger projects. Splitting the file into different modules would probably be the best option, although I'm not sure how Flask deals with this - something to look into in my next project!</p>
+</body>
+</html>

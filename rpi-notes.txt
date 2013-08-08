@@ -1,0 +1,9 @@
+http://naich.net/wordpress/?p=457
+
+wireless:
+    http://dl.dropbox.com/u/80256631/install-rtl8188cus.txt
+    http://dl.dropbox.com/u/80256631/install-rtl8188cus.sh
+    http://raspberrypi.stackexchange.com/questions/1451/how-do-you-get-wireless-lan-working-on-raspbmc
+
+    http://pingbin.com/2012/12/30-cool-ideas-raspberry-pi-project/# 
+    http://serverfault.com/questions/153776/nmap-find-all-alive-hostnames-and-ips-in-lan
