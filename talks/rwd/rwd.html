@@ -42,6 +42,11 @@
 
 				<section>
 					<h2>What is responsive design?</h2>
+                    <blockquote>Sites adapt to user behaviour and environment</blockquote>
+
+                    <p>e.g. view site on desktop, switch to phone. 
+                        Images should be smaller, navigation optimised for touch, less js (battery life, processor power)</p>
+                    <p>Content stays the same</p>
 
 				</section>
 
@@ -50,16 +55,57 @@
 					<section>
 						<h2>Adaptive</h2>
 						<ul>
-                            <li>Separate site which detects size or user-string</li>
+                            <li>Detect device - screen size or user-string</li>
+                            <li>Redirect to a separate site</li>
                             <li>Predefined set of sizes</li>
                         </ul>
+                        <a href="http://www.bbc.co.uk">BBC</a>
 					</section>
+                    <section>
+                        <h2>Adaptive pros</h2>
+                        <ul>
+                            <li>
+                                Silos - useful for adding mobile site without affecting existing site.
+                                See BBC &amp; Guardian
+                            </li>
+                            <li>Control size of layout</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Adaptive cons</h2>
+                        <ul>
+                            <li>Sniffing - bad since can't rely on it</li>
+                            <li>Not future-proof: phone site, iPad site - what next?</li>
+                            <li>Large codebase - lots of templates, more for every device supported</li>
+                        </ul>
+                    </section>
+                </section>
+                
+                <section>
 					<section>
 						<h2>Responsive (breakpoint)</h2>
 						<ul>
-                            <li>Set up points at which to change layout</li>
+                            <li>Set up points at which to change layout
+                                e.g. &lt;480px, between 480px and 768px, &gt;1024px
+                            </li>
+                            <li>Probably most common variation at the moment</li>
+                            <li>Controlled through media queries in CSS</li>
                         </ul>
+                        <a href="http://www.bostonglobe.com/">Boston Globe</a>
 					</section>
+                    <section>
+                        <h2>Breakpoint pros</h2>
+                        <ul>
+                            <li>Covers range of devices</li>
+                            <li>Same codebase</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Breakpoint cons</h2>
+                    </section>
+                </section>
+
+                <section>
 					<section>
 						<h2>Responsive (fluid)</h2>
 						<p>Everything is relative</p>
