@@ -1,169 +1,305 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<style>
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote {
-    margin: 0;
-    padding: 0;
+<title>responsive-design</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: 29d1c5bc36da364ad5aa86946d420b7bbc54a253 */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
+
+/* BODY
+=============================================================================*/
+
 body {
-    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
-    color: #737373;
-    margin: 10px 13px 10px 13px;
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
 }
-a {
-    color: #0069d6;
+
+body>*:first-child {
+  margin-top: 0 !important;
 }
-a:hover {
-    color: #0050a3;
-    text-decoration: none;
+
+body>*:last-child {
+  margin-bottom: 0 !important;
 }
-a img {
-    border: none;
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
 }
-p {
-    margin-bottom: 9px;
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #404040;
-    line-height: 36px;
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
 }
+
 h1 {
-    margin-bottom: 18px;
-    font-size: 30px;
+  font-size: 28px;
+  color: #000;
 }
+
 h2 {
-    font-size: 24px;
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
 }
+
 h3 {
-    font-size: 18px;
+  font-size: 18px;
 }
+
 h4 {
-    font-size: 16px;
+  font-size: 16px;
 }
+
 h5 {
-    font-size: 14px;
+  font-size: 14px;
 }
+
 h6 {
-    font-size: 13px;
+  color: #777;
+  font-size: 14px;
 }
-hr {
-    margin: 0 0 19px;
-    border: 0;
-    border-bottom: 1px solid #ccc;
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
 }
-blockquote {
-    padding: 13px 13px 21px 15px;
-    margin-bottom: 18px;
-    font-family:georgia,serif;
-    font-style: italic;
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
 }
-blockquote:before {
-    content:"\201C";
-    font-size:40px;
-    margin-left:-10px;
-    font-family:georgia,serif;
-    color:#eee;
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
 }
-blockquote p {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 18px;
-    margin-bottom: 0;
-    font-style: italic;
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
 }
-code, pre {
-    font-family: Monaco, Andale Mono, Courier New, monospace;
+
+a:hover {
+  text-decoration: underline;
 }
-code {
-    background-color: #fee9cc;
-    color: rgba(0, 0, 0, 0.75);
-    padding: 1px 3px;
-    font-size: 12px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
 }
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
 pre {
-    display: block;
-    padding: 14px;
-    margin: 0 0 18px;
-    line-height: 16px;
-    font-size: 11px;
-    border: 1px solid #d9d9d9;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
 }
-pre code {
-    background-color: #fff;
-    color:#737373;
-    font-size: 11px;
-    padding: 0;
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
 }
-@media screen and (min-width: 768px) {
-    body {
-        width: 748px;
-        margin:10px auto;
-    }
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
 }
 </style>
-<title>Responsive Design: Three case studies</title>
-
 </head>
 <body>
 <h1>Responsive Design: Three case studies</h1>
-
-<p>There's a lot more to responsive design than just changing the width of the page. These case studies document how three different sites were rebuilt to be responsive, and share ideas on</p>
-
+<p>There's a lot more to responsive design than just changing the width of the page. These case studies document how three different sites were rebuilt to be responsive, and share ideas on </p>
 <h2><a href="http://responsivenews.co.uk/">Responsive News</a></h2>
-
 <p><a href="http://responsivenews.co.uk/">Responsive News</a> is a blog written by the BBC News developers and covers a wide range of topics they came across while rebuilding the BBC News site. The BBC is especially interesting since the site needs to work in eleventy billion different browsers, most of which are rather old.</p>
-
 <p>The key points this blog covers is '<a href="http://responsivenews.co.uk/post/18948466399/cutting-the-mustard">cutting the mustard</a>' - a technique used to work out whether the browser is modern enough to have all the fancy new features, or an older one which should be served a basic (but accessible) version of the site.</p>
-
 <p>The post on <a href="http://responsivenews.co.uk/post/50092458307/images">responsive images</a> (every image has eighteen different versions!) is also good, but you should read every post on the site!</p>
-
 <h2><a href="http://mattandrews.info/talks/port80-2013/">The Guardian mobile site</a></h2>
-
 <p>This is from <a href="http://mattandrews.info/talks/port80-2013/">a talk by Matt Andrews</a> (a front-end developer at the Guardian) at <a href="http://port80events.co.uk/">Port 80</a> earlier this year. Similar to the BBC site, only the mobile site was rebuilt to be responsive - it's a huge job to rebuild the entire site, so most sites choose to rebuild only a section at a time.</p>
-
 <p>This talk specifically mentions the BBC News approach, and covers which ideas were useful and which were expanded upon in rebuilding the Guardian. As with the BBC site, the Guardian checks <a href="http://mattandrews.info/talks/port80-2013/#/12">whether or not the browser can use certain features</a>, which then changes the version of the site shown to visitors.</p>
-
 <p><a href="http://mattandrews.info/talks/port80-2013/#/22">Images are dealt with in an interesting way</a> (responsive images are always interesting because no-one's really worked out a good way to handle them yet) - the Guardian site always downloads a very small (140px wide) image initially, then checks to see if the browser is on a larger screen and downloads a bigger version.</p>
-
-<p>The key thing from this talk was that <a href="http://mattandrews.info/talks/port80-2013/#/29">responsive design is about more than screen width</a> - the speed of the connection should also be taken into account when deciding what to show users. For instance, a phone being used over Wifi can probably handle large images and webfonts, whereas a laptop being used on a train is likely to have quite a bad connection and so should be served only the core site content.</p>
-
+<p>The key thing from this talk was that <a href="http://mattandrews.info/talks/port80-2013/#/29">responsive design is about more than screen width</a> - the speed of the connection should also be taken into account when deciding what to show users. For instance, a phone being used over Wifi can probably handle large images and web fonts, whereas a laptop being used on a train is likely to have quite a bad connection and so should be served only the core site content.</p>
 <h2><a href="http://upstatement.com/blog/2012/01/how-to-approach-a-responsive-design/">Boston Globe</a></h2>
-
-<p>The Boston Globe case study is a comprehensive look at the responsive redesign of the Boston Globe site, from the initial design phase to building the site.</p>
-
-<p>The design process used is really interesting - the initial designs were for the desktop site, and were then iterated upon for the different versions of the site. Things like the top navigation are especially interesting - not all of the items could fit on the screen at smaller sizes, so the developers had to consider what the most important items were and which could be hidden without affecting the user experience.</p>
-
-<h2>Overall:</h2>
-
-<p>There are a few key things all of these case studies bring up:</p>
-
-<ul>
-<li><p><strong>Core experience</strong> - at smaller sizes not everything can fit on the screen. Similarly, slower connections shouldn't be made to download extra 'nice-to-have' features such as web fonts or large images - you should consider what the core features of your site are (i.e. the content!) and make sure this is loaded first so that users aren't negatively affected by the size of their device or speed of connection.</p></li>
-<li><p><strong>No big releases</strong> - rebuild parts of the site at a time - the Guardian even show their beta versions publically to get feedback. This means you don't need to rebuild the whole site at once; you can start from scratch on a smaller section without worrying whether you'll break the entire site or having to deal with technical debt.</p></li>
-<li><p><strong>Multiple experiences</strong> (progressive enhancement) - it's ok for the same site to look different on different browsers. You can't make a site look indentical on desktop and on mobile, so focus on creating the optimum experience for each one rather than having one all-round average version.</p></li>
-</ul>
+<p>The Boston Globe case study is a comprehensive look at the responsive redesign of the Boston Globe site, from the initial design phase to building the site. </p>
+<p>A lot of changes from the original designs were needed in different versions of the site depending on the width of the site - not everything could fit on the screen at once, so the developers had to consider what the most important items were and which could be hidden without affecting the user experience. The way the main site navigation changes depending on the screen size is a really interesting example of prioritising information on the screen.</p>
+<p>This case study is also interesting since they went against the trend of designing for mobiles first. Instead, the designs started with the 960px version which had the most complex layout - lots of columns of information and with everything displayed.</p>
+<h2>Overall</h2>
+<h3>Core experience</h3>
+<p>At smaller sizes not everything can fit onto the screen. Similarly, slower connections shouldn't be made to download extra 'nice-to-have' features such as web fonts or large images - you should consider what the core features of your site are (i.e. the content!) and make sure this is loaded first so that users aren't negatively affected by the size of their device or speed of connection.</p>
+<h3>Screen size isn't the defining factor</h3>
+<p>Take into account the speed of the connection before serving large images or web fonts - just because a device has a large screen, it doesn't mean that it will have a fast internet connection.</p>
+<p>Also consider whether browsers can handle certain features; if browsers can handle things natively, use them! Forcing users to download polyfills to fix issues in browsers they aren't even using is bad, and slows the site down for everyone.</p>
+<h3>Multiple experiences (i.e. progressive enhancement)</h3>
+<p>It's ok for the same site to look different on different browsers. You can't make a site look identical on desktop and on mobile, so focus on creating the optimum experience for each one rather than having one all-round average version.</p>
+<p>Since sites don't look the same on mobile and desktop, it's an easier conversation to have with the client to explain that the site doesn't have to be pixel perfect in every browser. As above, it is possible to make the site look exactly the same in ancient browsers, but this comes at the cost of making the site large and therefore slower (and also making your code a mess!)</p>
+<h3>Images are a pain!</h3>
+<p>There are <a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/">many</a> <a href="http://mobile.smashingmagazine.com/2013/07/08/choosing-a-responsive-image-solution/">options</a> for providing <a href="https://www.google.co.uk/search?q=responsive+images">responsive images</a>; currently there isn't a best-practice option. You'll have to weigh up the positives and negatives of each option and work out which will work best for your site.</p>
 
 </body>
 </html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
