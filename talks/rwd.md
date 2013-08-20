@@ -48,10 +48,6 @@ http://johnpolacek.github.io/scrolldeck.js/decks/responsive/
 
 
 
-Session to discuss/debate/understand the capabilities and constraints of different mobile approaches:
-•	Responsive
-•	Adaptive 
-•	Separate mobile instance of site
 
 Things to cover off:
 •	How does device influence each option
