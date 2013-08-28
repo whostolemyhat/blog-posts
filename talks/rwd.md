@@ -38,7 +38,8 @@ Since sites don't look the same on mobile and desktop, it's an easier conversati
 
 #Images
 Many different versions
-Don't want to serve huge images to phones; don't want 
+Don't want to serve huge images to phones
+http://mobile.smashingmagazine.com/2013/08/21/webkit-implements-srcset-and-why-its-a-good-thing/
 
 
 examples
@@ -46,7 +47,8 @@ frameworks
 
 http://johnpolacek.github.io/scrolldeck.js/decks/responsive/
 
-
+gov.uk
+ethanmarcotte site
 
 
 Things to cover off:
